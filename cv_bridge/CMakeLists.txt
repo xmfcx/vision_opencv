@@ -18,11 +18,8 @@ find_package(Boost REQUIRED)
 endif()
 
 set(_opencv_version 4)
-find_package(OpenCV 4 QUIET)
-if(NOT OpenCV_FOUND)
-  message(STATUS "Did not find OpenCV 4, trying OpenCV 3")
-  set(_opencv_version 3)
-endif()
+set(OpenCV_DIR "~/libraries/libopencv-4.5.1/lib/cmake/opencv4/")
+find_package(OpenCV 4.5.1 REQUIRED)
 
 find_package(OpenCV ${_opencv_version} REQUIRED
   COMPONENTS
